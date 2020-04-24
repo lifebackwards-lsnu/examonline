@@ -1,0 +1,49 @@
+运行redis：
+
+$ redis-server /etc/redis/6379.conf
+
+或者是
+
+启动redis:
+
+redis-server &
+
+关闭redis
+
+redis-cli shutdown
+
+查看redis是否启动
+
+#redis-cli
+
+以上命令将打开以下终端：
+
+127.0.0.1:6379>
+
+输入PING命令：
+
+127.0.0.1:6379> ping
+
+PONG
+
+
+#################
+启动前关闭防火墙：systemctl stop firewalld
+redis以非保护模式启动： redis-server --protected-mode no &
+
+
+暂时关闭防火墙
+
+systemctl stop firewalld
+
+service iptables stop
+
+永久关闭防火墙
+
+systemctl disable firewalld
+
+chkconfig iptables off
+
+重启防火墙
+
+systemctl enable firewalld
